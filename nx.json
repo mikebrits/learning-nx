@@ -19,6 +19,9 @@
     },
     "favourite-word-dashboard-e2e": {
       "tags": []
+    },
+    "components": {
+      "tags": ["ui"]
     }
   }
 }

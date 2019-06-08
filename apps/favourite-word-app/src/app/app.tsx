@@ -1,4 +1,5 @@
 import React from 'react';
+import {Components} from '@nx-test/components'
 
 import './app.css';
 
@@ -6,12 +7,13 @@ export const App = () => {
   return (
     <div>
       <header style={{ textAlign: 'center' }}>
-        <h1>Welcome to favourite-word-app!</h1>
+        <h1>Welcome to the App!</h1>
         <img
           width="450"
           src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
         />
       </header>
+      <Components/>
       <p>
         This is a React app built with <a href="https://nx.dev">Nx</a>.
       </p>
