@@ -7,5 +7,18 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "favourite-word-app": {
+      "tags": []
+    },
+    "favourite-word-app-e2e": {
+      "tags": []
+    },
+    "favourite-word-dashboard": {
+      "tags": []
+    },
+    "favourite-word-dashboard-e2e": {
+      "tags": []
+    }
+  }
 }
