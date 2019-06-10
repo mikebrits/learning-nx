@@ -20,8 +20,14 @@
     "favourite-word-dashboard-e2e": {
       "tags": []
     },
-    "components": {
-      "tags": ["ui"]
+    "api": {
+      "tags": []
+    },
+    "interfaces": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
     }
   }
 }

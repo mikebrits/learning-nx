@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, cleanup } from 'react-testing-library';
 
-import Components from './components';
+import Button from './button';
 
-describe(' Components', () => {
+describe(' Button', () => {
   afterEach(cleanup);
 
   it('should render successfully', () => {
-    const { baseElement } = render(<Components />);
+    const { baseElement } = render(<Button />);
     expect(baseElement).toBeTruthy();
   });
 });

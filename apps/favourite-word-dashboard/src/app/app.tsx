@@ -1,5 +1,6 @@
 import React from 'react';
-import {Components} from '@nx-test/components';
+import {Button} from '@nx-test/ui'; 
+
 
 import './app.css';
 
@@ -13,7 +14,7 @@ export const App = () => {
           src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
         />
       </header>
-      <Components/>
+      <Button link="Boop">Ola</Button>
       <p>
         This is a React app built with <a href="https://nx.dev">Nx</a>.
       </p>

@@ -1,36 +1,15 @@
 import React from 'react';
-import {Components} from '@nx-test/components'
-
+import {Button} from '@nx-test/ui';
 import './app.css';
+import {submitWord} from '../api/app-api';
 
 export const App = () => {
   return (
     <div>
       <header style={{ textAlign: 'center' }}>
-        <h1>Welcome to the App!</h1>
-        <img
-          width="450"
-          src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
-        />
+        <h1>Tell us your favourite word</h1>
       </header>
-      <Components/>
-      <p>
-        This is a React app built with <a href="https://nx.dev">Nx</a>.
-      </p>
-      <p>🔎 **Nx is a set of Angular CLI power-ups for modern development.**</p>
-      <h2>Quick Start & Documentation</h2>
-      <ul>
-        <li>
-          <a href="https://nx.dev/getting-started/what-is-nx">
-            30-minute video showing all Nx features
-          </a>
-        </li>
-        <li>
-          <a href="https://nx.dev/tutorial/01-create-application">
-            Interactive tutorial
-          </a>
-        </li>
-      </ul>
+
     </div>
   );
 };
