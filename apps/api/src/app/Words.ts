@@ -11,19 +11,21 @@ routes.get('/', (req, res) => {
             id: '321'
         }
     ];
-    res.send(data);
+    const { user } = req.query;
+
+    res.send(user ? data.filter(i => i.id === user) : data);
 });
 
 routes.post('/', (req, res) => {
-  const body : SubmitWord = JSON.parse(req.body);
+    const body: SubmitWord = JSON.parse(req.body);
 
-  const result : Word = {
-    word: body.word,
-    submittedBy: body.id,
-    id: Math.floor(Math.random()*100).toString()
-  };
+    const result: Word = {
+        word: body.word,
+        submittedBy: body.id,
+        id: Math.floor(Math.random() * 100).toString()
+    };
 
-  res.send(result);
+    res.send(result);
 });
 
 export default routes;

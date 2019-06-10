@@ -8,11 +8,10 @@ const defaultHeaders = {
 };
 
 const defaultOptions = {
-  method: 'GET',
-  headers: defaultHeaders,
-  body: ''
+    method: 'GET',
+    headers: defaultHeaders,
+    body: ''
 };
-
 
 const request = (endpoint, options = defaultOptions) => {
     return fetch(API_URL + endpoint, options)
@@ -20,7 +19,7 @@ const request = (endpoint, options = defaultOptions) => {
         .catch(e => `There was a request error: ${e}`);
 };
 
-const get = (url) => request(url);
+const get = url => request(url);
 
 const post = (url, data) => {
     return request('words', {
@@ -30,8 +29,9 @@ const post = (url, data) => {
     });
 };
 
-export const getWords = () : Promise<[Word]> => get('words');
+export const getWords = (user: string = ''): Promise<[Word]> =>
+    get('words' + user && `?user=${user}`);
 
-export const submitWord = (word : SubmitWord) : Promise<Word> => {
+export const submitWord = (word: SubmitWord): Promise<Word> => {
     return post(API_URL + 'words', word);
 };
