@@ -9,12 +9,11 @@ const defaultHeaders = {
 
 const defaultOptions = {
     method: 'GET',
-    headers: defaultHeaders,
-    body: ''
+    headers: defaultHeaders
 };
 
-const request = (endpoint, options = defaultOptions) => {
-    return fetch(API_URL + endpoint, options)
+const request = (endpoint, options = {}) => {
+    return fetch(API_URL + endpoint, { ...defaultOptions, ...options })
         .then(res => res.json())
         .catch(e => `There was a request error: ${e}`);
 };
