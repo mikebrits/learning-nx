@@ -11,6 +11,7 @@ export const WordInput = ({ onSubmit }: WordInputProps) => {
     const handleSubmit = e => {
         e.preventDefault();
         onSubmit(word);
+        setWord('');
     };
     return (
         <form onSubmit={handleSubmit}>

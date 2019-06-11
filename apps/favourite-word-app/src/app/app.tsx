@@ -9,7 +9,7 @@ import { Word } from '@nx-test/interfaces';
 
 export const App = () => {
     const [id, setId] = useState('');
-    const [words, setWords] = useState<[Word] | null>(null);
+    const [words, setWords] = useState<Word[]>([]);
 
     useEffect(() => {
         getUserId().then(async _id => {
@@ -20,7 +20,8 @@ export const App = () => {
     }, []);
 
     const handleSubmitWord = async (word: string) => {
-        await submitWord({ word, id });
+        const newWord = await submitWord({ word, id });
+        setWords([...words, newWord]);
     };
 
     if (!id) return 'Initialising...';
