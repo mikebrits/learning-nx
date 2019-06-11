@@ -1,33 +1,17 @@
 import { Router } from 'express';
-import { SubmitWord, Word } from '@nx-test/interfaces';
+import { Word } from '@nx-test/interfaces';
+import { getWords, addWord } from '../controllers/Words.controller';
 
 const routes = Router();
 
-routes.get('/', (req, res) => {
-    const data: [Word] = [
-        {
-            word: 'one',
-            submittedBy: '123',
-            id: '321'
-        }
-    ];
-    const { user } = req.query;
-
-    res.send(user ? data.filter(i => i.id === user) : data);
+routes.get('/', async (req, res) => {
+    const data: [Word?] = await getWords(req.query.user);
+    res.send(data);
 });
 
-routes.post('/', (req, res) => {
-    const body: SubmitWord = req.body;
-
-    const result: Word = {
-        word: body.word,
-        submittedBy: body.id,
-        id: Math.floor(Math.random() * 100).toString()
-    };
-
-    console.log({ result });
-
-    res.send(result);
+routes.post('/', async (req, res) => {
+    const data: Word = await addWord(req.body);
+    res.send(data);
 });
 
 export default routes;
