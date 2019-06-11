@@ -17,13 +17,15 @@ routes.get('/', (req, res) => {
 });
 
 routes.post('/', (req, res) => {
-    const body: SubmitWord = JSON.parse(req.body);
+    const body: SubmitWord = req.body;
 
     const result: Word = {
         word: body.word,
         submittedBy: body.id,
         id: Math.floor(Math.random() * 100).toString()
     };
+
+    console.log({ result });
 
     res.send(result);
 });

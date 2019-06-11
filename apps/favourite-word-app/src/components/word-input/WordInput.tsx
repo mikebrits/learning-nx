@@ -8,7 +8,8 @@ export interface WordInputProps {
 
 export const WordInput = ({ onSubmit }: WordInputProps) => {
     const [word, setWord] = useState('');
-    const handleSubmit = () => {
+    const handleSubmit = e => {
+        e.preventDefault();
         onSubmit(word);
     };
     return (

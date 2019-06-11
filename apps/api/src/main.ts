@@ -6,18 +6,21 @@
 import * as express from 'express';
 import Words from './app/Words';
 import cors from 'cors';
+import { json } from 'body-parser';
+
 const app = express();
 
 app.use(cors());
+app.use(json());
 
 app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to api!!!!' });
+    res.send({ message: 'Welcome to api!!!!' });
 });
 
 app.use('/api/words', Words);
 
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
+    console.log(`Listening at http://localhost:${port}/api`);
 });
 server.on('error', console.error);
