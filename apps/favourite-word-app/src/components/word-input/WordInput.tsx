@@ -15,8 +15,8 @@ export const WordInput = ({ onSubmit }: WordInputProps) => {
     };
     return (
         <form onSubmit={handleSubmit}>
-            <input value={word} onChange={e => setWord(e.target.value)} />
-            <button onClick={handleSubmit}>Submit</button>
+            <input data-cy="word-input" value={word} onChange={e => setWord(e.target.value)} />
+            <button onClick={handleSubmit} data-cy="submit-button">Submit</button>
         </form>
     );
 };
