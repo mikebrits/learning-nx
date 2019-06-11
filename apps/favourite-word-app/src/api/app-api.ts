@@ -21,16 +21,17 @@ const request = (endpoint, options = {}) => {
 const get = url => request(url);
 
 const post = (url, data) => {
-    return request('words', {
+    return request(url, {
         method: 'POST',
         headers: defaultHeaders,
         body: JSON.stringify(data)
     });
 };
 
-export const getWords = (user: string = ''): Promise<[Word]> =>
-    get('words' + user && `?user=${user}`);
+export const getWords = (user: string = ''): Promise<[Word]> => {
+    return get(`words${user ? `?user=${user}` : ''}`);
+};
 
 export const submitWord = (word: SubmitWord): Promise<Word> => {
-    return post(API_URL + 'words', word);
+    return post('words', word);
 };

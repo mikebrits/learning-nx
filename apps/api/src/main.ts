@@ -5,7 +5,10 @@
 
 import * as express from 'express';
 import Words from './app/Words';
+import cors from 'cors';
 const app = express();
+
+app.use(cors());
 
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to api!!!!' });
